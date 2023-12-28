@@ -1,0 +1,6 @@
+behave==1.2.6
+selenium==4.13.0
+webdriver-manager>=4.0.1
+reportportal-client==5.4.0
+behave-reportportal==3.0.0
+urllib3==1.26.6
