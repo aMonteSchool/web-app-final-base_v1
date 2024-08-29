@@ -11,7 +11,7 @@ def init(context):
     logger.warning('Initializing Browser\n')
 
     options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
+    # options.add_argument('--headless')
     prefs = {"profile.default_content_setting_values.geolocation": 2}
     options.add_experimental_option("prefs", prefs)
 
