@@ -18,7 +18,7 @@ class PickupDate(Base):
     PREV_MONTH = '//a[contains(@class, "ui-datepicker-prev")]'
     NEXT_MONTH = '//a[contains(@class, "ui-datepicker-next")]'
     TITLE = '//div[@class="ui-datepicker-title"]'
-    DATE = '//a[@class="ui-state-default"][@data-date="{day}"]'
+    DATE = '//a[contains(@class, "ui-state-default")][@data-date="{day}"]'
     CALENDAR_PAGE = ('//div[contains(@class, "ui-datepicker-group")]'
                      '[.//span[@class="ui-datepicker-month"][text() = "{month}"]]'
                      '[.//span[@class="ui-datepicker-year"][text() = "{year}"]]')
@@ -71,4 +71,5 @@ class PickupDate(Base):
 
         assert self.date >= date.today(), "Pickup date could not be in the past"
         date_page = self.find_calendar_page()
-        date_page.find_element(By.XPATH, f".{self.DATE.format(day=self.date.day)}").click()
+        xpath = self.DATE.format(day=self.date.day)
+        date_page.find_element(By.XPATH, "." + xpath).click()
