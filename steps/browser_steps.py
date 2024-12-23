@@ -78,7 +78,7 @@ def browser_refresh(context):
 
         logger.debug(
             "Alert is present and will be accepted",
-            {'screenshot': chrome.take_screenshot()})
+            {'screenshot': chrome.take_screenshot(context)})
 
         context.browser.switch_to.alert.accept()
         logger.debug("Alert accepted")
