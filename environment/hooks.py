@@ -34,7 +34,7 @@ def before_feature(context, feature):
 
 
 def before_scenario(context, scenario):
-    print('SCENARIO\t', scenario.name)
+    # print('SCENARIO\t', scenario.name)
     rp.before_scenario(context, scenario)
 
     scenario_background(context, scenario)
@@ -50,7 +50,7 @@ def after_step(context, step):
     if step.status == 'failed':
         chrome.take_screenshot(context)
 
-    rp.after_step(context, step)
+    # rp.after_step(context, step)
 
 
 def after_scenario(context, scenario):
